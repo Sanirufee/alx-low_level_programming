@@ -20,4 +20,4 @@ xor >>= 1;
 }
 
 return (bits);
-}}
+}
