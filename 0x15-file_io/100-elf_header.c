@@ -310,5 +310,3 @@ free(header);
 close_elf(o);
 return (0);
 }
-return (0);
-}
