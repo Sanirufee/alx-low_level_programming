@@ -1,5 +1,3 @@
-es (44 sloc)  1.1 KB
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
