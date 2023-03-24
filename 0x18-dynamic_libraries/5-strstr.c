@@ -1,28 +1,28 @@
+#include <stdio.h>
 #include "main.h"
 /**
- * _strstr - fuction that locates string in a string
- * @haystack:The original string
- * @needle: the searching string
- * Return:the beginning of located string or NULL if not found
+ *  _strstr - Entry point
+ *   @haystack: input
+ *    @needle: input
+ *    Return: Always 0 (Success)
  */
 char *_strstr(char *haystack, char *needle)
 {
-	char *a, *b;
-
-	while (*haystack != '\0')
+	for (; *haystack != '\0'; haystack++)
 	{
-		a = haystack;
-		b = needle;
-		while (*b != '\0' && *haystack == *b)
+
+		char *one = haystack;
+		char *two = needle;
+
+		while (*one == *two && *two != '\0')
 		{
-			haystack++;
-			b++;
+			one++;
+			two++;
 		}
-		if (!*b)
-		{
-			return (a);
-		}
-		haystack++;
+
+		if (*two == '\0')
+			return (haystack);
 	}
 	return (NULL);
 }
+

@@ -1,29 +1,23 @@
+#include <stdio.h>
 #include "main.h"
 /**
- * @*_strpbrk - locate the first element in accept
- * @s: the string
- * @accept: the compare string
- * Return: pointer to the string if present and NULL if not
+ *  _strpbrk - Entry point
+ *   @s: input
+ *    @accept: input
+ *     Return: Always 0 (Success)
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int i, j;
-	char *p;
+	int i, n;
 
-	i = 0;
-	while (s[i] != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		j = 0;
-		while (accept[j] != '\0')
+		for (n = 0; accept[n] != '\0'; n++)
 		{
-			if (accept[j] == s[i])
-			{
-				p = &s[i];
-				return (p);
-			}
-			j++;
+			if (s[i] == accept[n])
+				return (s + i);
 		}
-		i++;
 	}
-	return (0);
+
+	return (NULL);
 }

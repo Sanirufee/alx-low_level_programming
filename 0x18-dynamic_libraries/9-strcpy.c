@@ -1,19 +1,21 @@
 #include "main.h"
-#include <stdio.h>
+
 /**
- * *_strcpy - copy string with setinel character
- * @dest: returnrd string
- * @src: the pointed string
- * Return: charcter of copird string
+ * _strcpy - function that copies the string
+ *
+ * @dest: pointer to destination char
+ *  @src: pointer to source char
+ *   Return: char
  */
+
 char *_strcpy(char *dest, char *src)
 {
-	int i = 0;
+	int i;
 
-	while (src[i])
+	for (i = 0; src[i] != '\0'; i++)
 	{
-		dest[i] = src[i];
-		i++;
+		*(dest + i) = *(src + i);
 	}
-	dest[i] = '\0';
-	return (dest); }
+	*(dest + i) = '\0';
+	return (dest);
+}

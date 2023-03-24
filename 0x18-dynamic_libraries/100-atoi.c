@@ -1,24 +1,32 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 /**
- * _atoi - convert string to integer
- * @s: the string
- * Return: integer on succeful and 0 on failure
+ * _atoi - function that convert a string to an integer
+ * @s: string to convert
+ *
+ * Return: int
  */
 int _atoi(char *s)
 {
-	unsigned int a = 0;
-	int b = 1;
+	int i = 0;
+	int neg = 0;
+	int num = 0;
+	unsigned int conv = 0;
 
-	do {
-		if (*s == '-')
-			b *= -1;
-		else if (*s >= '0' && *s <= '9')
-			a = (a * 10) + (*s - '0');
-		else if (a > 0)
+	while (s[i])
+	{
+		if (s[i] == '-')
+			neg++;
+		else if (s[i] >= '0' && s[i] <= '9')
+		{
+			conv = conv * 10 + s[i] - '0';
+			num = 1;
+		}
+		else if (num == 1 && (s[i] < '0' || s[i] > '9'))
 			break;
-	} while (*s++);
-
-	return (a * b);
+		i++;
+	}
+	if (neg % 2 == 0)
+		return (conv);
+	else
+		return (-conv);
 }

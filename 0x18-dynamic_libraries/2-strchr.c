@@ -1,25 +1,21 @@
+#include <stdio.h>
 #include "main.h"
+
 /**
- * @*_strchr - function to check char in string
- * @s: the string
- * @c: the character
- * Return: s where the found and NUlL if not
+ *  _strchr - Entry point
+ *   @s: input
+ *    @c: input
+ *    Return: Always 0 (Success)
  */
 char *_strchr(char *s, char c)
 {
-	int i = 0;
+	int i;
 
-	while (*(s + i) != '\0')
+	for (i = 0; s[i] >= '\0'; i++)
 	{
-		if (*(s + i) == c)
-		{
+		if (s[i] == c)
 			return (s + i);
-		}
-
-		i++;
 	}
 
-	if (c == '\0')
-		return (s + i);
 	return (NULL);
 }

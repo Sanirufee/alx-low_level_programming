@@ -1,14 +1,10 @@
-#include <stdlib.h>
 #include "main.h"
 /**
- * _abs - entry point
- * Description: Returning the absolute value
- * @c: the value we are returning its absolute
- * Return: q if succesful
+ * _abs - a function that computes the absolute value of an integer
+ * @ab: integer input
+ * Return: absolute value of ab
  */
-int _abs(int c)
+int _abs(int ab)
 {
-	int q = abs(c);
-
-	return (q);
+	return (ab * ((ab > 0) - (ab < 0)));
 }
